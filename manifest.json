@@ -2,16 +2,23 @@
     "manifest_version": 2,
     "name": "Crule",
     "version": "0.1",
+
+    "permissions": [
+        "storage",
+        "tabs"
+    ],
+
     "icons": {
         "128": "icon_128.png"
     },
-    "permissions": [
-        "storage"
-    ],
-    "app": {
-        "background": {
-            "scripts": ["jquery.min.js", "background.js"]
-        }
+
+    "browser_action": {
+        "default_icon": "icon_128.png"
+      },
+
+    "background": {
+        "scripts": ["jquery.min.js", "background.js"]
+        // "page": "background.html"
     },
     "minimum_chrome_version": "28"
 }

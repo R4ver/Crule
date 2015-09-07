@@ -2,16 +2,31 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <title>Crule</title>
         <script src="jquery.min.js"></script>
         <script src="script.js"></script>
     </head>
     <body>
-        <h1>Hello, let's code!</h1>
-
-        <p class="task">School at 08:20</p>
         
-        <a href="#" class="set-task">Set new Task</a>
-        <a href="#" class="get-task">Get Task</a>
+        <header>
+            <div class="ext-logo">Crule</div>
+            <div class="ext-description">Never miss break again</div>
+        </header>
+
+        <main class="ext-main">
+                <input type="text" class="ext-break ext-break--start" placeholder="Break begins">
+                <input type="text" class="ext-break ext-break--end" placeholder="Break ends">
+                <a href="#" class="ext-create-break">Add</a>
+            <br>
+            <a href="#" class="set-task">Set Task</a>
+            <a href="#" class="get-task">Get Task</a>
+            <a href="#" class="clear">Clear</a>
+            <br>
+            <h2>The tasks</h2>
+            <div class="task-holder">
+                
+            </div>
+        </main>
 
     </body>
 </html>
