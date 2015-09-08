@@ -1,0 +1,72 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700);
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: auto;
+  font-family: "Roboto", sans-serif; }
+
+body {
+  font-size: 1em;
+  background-color: #efefef; }
+
+.app__frame {
+  -webkit-app-region: drag;
+  position: fixed;
+  width: 100%;
+  font-family: Webdings;
+  text-align: right;
+  font-size: 12px;
+  cursor: move;
+  background-color: #2196F3; }
+  .app__frame a {
+    -webkit-app-region: no-drag;
+    display: inline-block;
+    padding: 8px 16px;
+    color: #efefef;
+    text-align: center;
+    text-decoration: none; }
+    .app__frame a:hover {
+      color: #efefef;
+      background-color: #1976D2; }
+
+.frame__content {
+  display: block; }
+
+.app__header {
+  margin-top: 32px;
+  padding: 16px; }
+  .app__header h1, .app__header h2 {
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 24px;
+    font-weight: 300; }
+  .app__header h1 {
+    font-size: 40px; }
+
+.task-holder {
+  display: block;
+  position: relative; }
+  .task-holder ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 8px; }
+  .task-holder ul li {
+    display: block;
+    list-style: none; }
+  .task-holder ul li a {
+    display: block;
+    padding: 8px 16px;
+    color: #efefef;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    background-color: #272727; }
+
+/*# sourceMappingURL=app.style.css.map */

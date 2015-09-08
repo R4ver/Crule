@@ -1,24 +1,19 @@
-/**
- * Listens for the app launching then creates the window
- *
- * @see http://developer.chrome.com/apps/app.window.html
- */
+chrome.app.runtime.onLaunched.addListener(function () {
+    
+    var screenWidth = screen.availWidth;
+    var screenHeight = screen.availHeight;
+    var width = 300;
+    var height = 500;
 
- //Create window when icon is pressed
-chrome.browserAction.onClicked.addListener(function() {
-    var w = 500;
-    var h = 500;
-    var left = Math.round( (screen.width/2)-(w/2) );
-    var top = Math.round( (screen.height/2)-(h/2) ); 
-
-    chrome.windows.create({
-        'url': 'index.html', 
-        'type': 'popup', 
-        "width": w, 
-        "height": h,
-        "left": left,
-        "top": top
-    }, function(window) {
-        
+    chrome.app.window.create('index.html', {
+        id: 'appWindow',
+        bounds: {
+            width: width,
+            height: height,
+            left: Math.round((screenWidth - width) / 2),
+            top: Math.round((screenHeight - height) / 2)
+        },
+        "resizable": false,
+        frame: "none"
     });
 });

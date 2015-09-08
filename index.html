@@ -1,32 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="chromeless" ng-csp="">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <title>Crule</title>
-        <script src="jquery.min.js"></script>
-        <script src="script.js"></script>
+
+        <link rel="stylesheet" href="assets/css/angular-csp.css">
+        <link rel="stylesheet" href="assets/css/app.style.css">
+
     </head>
     <body>
-        
-        <header>
-            <div class="ext-logo">Crule</div>
-            <div class="ext-description">Never miss break again</div>
-        </header>
 
-        <main class="ext-main">
+        <div class="app__frame" ng-controller="ScreenController as screens">
+            <a href="#" ng-click="minimize();" id="window-minimize" title="Minimize">&#48;</a>
+            <a href="#" ng-click="close();" id="window-close" title="Close">&#114;</a>
+        </div>
+        
+        <div class="frame__content">
+            <header class="app__header">
+                <h1>Crule</h1>
+                <h2>Never miss break again</h2>
+            </header>
+
+            <main class="app__main">
                 <input type="text" class="ext-break ext-break--start" placeholder="Break begins">
                 <input type="text" class="ext-break ext-break--end" placeholder="Break ends">
                 <a href="#" class="ext-create-break">Add</a>
-            <br>
-            <a href="#" class="set-task">Set Task</a>
-            <a href="#" class="get-task">Get Task</a>
-            <a href="#" class="clear">Clear</a>
-            <br>
-            <h2>The tasks</h2>
-            <div class="task-holder">
-                
-            </div>
-        </main>
-
+                <br>
+                <a href="#" class="set-task">Set Task</a>
+                <a href="#" class="get-task">Get Task</a>
+                <a href="#" class="clear">Clear</a>
+                <br>
+                <h2>The tasks</h2>
+                <div class="task-holder">
+                    <ul></ul>
+                </div>
+            </main>
+        </div>
+    
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/angular.min.js"></script>
+        <script src="assets/js/app.js"></script>
+        <script src="assets/js/script.js"></script>
     </body>
 </html>
