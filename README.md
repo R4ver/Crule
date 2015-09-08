@@ -4,14 +4,14 @@
 
 ## Instalation
 To install Crule in the development state you have to:
-1. Download the source
-2. Save the files in a folder on your disk eg. "Documents/Crule-dev"
-3. Open Chrome
-4. Go to "settings"
-5. Go to "Extenstions"
-6. Click on the button which says "Load unpacked extension..."
-7. Navigate to the app folder and select it
-8. The app is now installed
+- Download the source
+- Save the files in a folder on your disk eg. "Documents/Crule-dev"
+- Open Chrome
+- Go to "settings"
+- Go to "Extenstions"
+- Click on the button which says "Load unpacked extension..."
+- Navigate to the app folder and select it
+- The app is now installed
 
 ## Changelog
 *v0.2*
