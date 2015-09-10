@@ -56,7 +56,7 @@ function UIRect(options) {
 * Name: UIButton
 * Takes Arguments: Yes
 * Required Arguments: content
-* Description: Creates a button, square or circle.
+* Description: Creates a button, either square or circle.
 */
 function UIButton(options) {
     //Default values
