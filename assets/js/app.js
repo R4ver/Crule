@@ -28,7 +28,7 @@ function Crule() {
 
             //Converts the string into JSON
             times = JSON.parse(convert_string);
-            // $(".task-holder ul").empty();
+            $(".task-holder ul").empty();
             for ( var i = 0; i < times.monday.length; i++ ) {
                 render(".task-holder ul", times.monday[i][0], times.monday[i][1]);
             }
