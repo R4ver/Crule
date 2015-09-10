@@ -28,12 +28,22 @@ function Crule() {
 
             //Converts the string into JSON
             times = JSON.parse(convert_string);
-            render(".task-holder ul", times.monday[0][0], times.monday[0][1]);
+            // $(".task-holder ul").empty();
+            for ( var i = 0; i < times.monday.length; i++ ) {
+                render(".task-holder ul", times.monday[i][0], times.monday[i][1]);
+            }
+
         });
     };
 
     var render = function(target, break_start, break_end) {
-        $(target).append("<li><a href='#'><span class='break-start'>" + break_start + "</span> - <span class='break-end'>" + break_end + "</span></a></li>");
+
+        UIRect({
+            target: target,
+            class: "uiRect-time",
+            backgroundColor: "none",
+            content: "<li><a href='#'><span class='break-start'>" + break_start + "</span> - <span class='break-end'>" + break_end + "</span></a></li>"
+        });
     };
 
     return {
@@ -62,26 +72,15 @@ var chromeless = angular.module('chromeless', []);
 angular.module('chromeless').controller('ScreenController', function ($scope) {
 
    // Make sure we read the initial state as well, since the app might startup as maximized.
-    $scope.isMaximized = chrome.app.window.current().isMaximized();
 
     $scope.handleWindowEvents = function () {
         // Happens when user uses the window bar or shortcuts to maximize.
-        $scope.isMaximized = chrome.app.window.current().isMaximized();
-
         // This happens from an event and therefore we need to run $apply to make the UI update.
         $scope.$apply();
     };
     
     $scope.minimize = function () {
         chrome.app.window.current().minimize();
-    }
-
-    $scope.maximize = function () {
-        chrome.app.window.current().maximize();
-    }
-
-    $scope.restore = function () {
-        chrome.app.window.current().restore();
     }
 
     $scope.close = function () {
@@ -91,9 +90,6 @@ angular.module('chromeless').controller('ScreenController', function ($scope) {
     $scope.initialize = function () {
 
         // Hooks up handler on the Chrome App window events.
-        chrome.app.window.current().onMaximized.addListener($scope.handleWindowEvents);
-        chrome.app.window.current().onMinimized.addListener($scope.handleWindowEvents);
-        chrome.app.window.current().onRestored.addListener($scope.handleWindowEvents);
 
     }(); // Execute initialize
 
